@@ -1,4 +1,3 @@
-# notes.py
 import json
 import csv
 from datetime import datetime
@@ -14,7 +13,6 @@ class Note:
     def to_dict(self):
         return {"id": self.id, "title": self.title, "content": self.content, "timestamp": self.timestamp}
 
-    @staticmethod
     def from_dict(data):
         return Note(data['id'], data['title'], data['content'], data['timestamp'])
 
