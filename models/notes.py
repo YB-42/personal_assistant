@@ -36,16 +36,16 @@ class NoteManager:
         new_note = Note(new_id, title, content)
         self.notes.append(new_note)
         self.save_notes()
-        print("Note created successfully.")
+        print("Заметка создана")
 
     def list_notes(self):
         for note in self.notes:
-            print(f"{note.id}. {note.title} (Last Modified: {note.timestamp})")
+            print(f"{note.id}. {note.title} (Последнее изменение: {note.timestamp})")
 
     def view_note_details(self, note_id):
         note = next((n for n in self.notes if n.id == note_id), None)
         if note:
-            print(f"Title: {note.title}\nContent: {note.content}\nLast Modified: {note.timestamp}")
+            print(f"Заголовок: {note.title}\nОсновная часть: {note.content}\nПоследнее изменение: {note.timestamp}")
         else:
             print("Заметка не найдена")
 
@@ -56,7 +56,7 @@ class NoteManager:
             note.content = new_content
             note.timestamp = datetime.now().strftime("%d-%m-%Y %H:%M:%S")
             self.save_notes()
-            print("Note updated successfully.")
+            print("Заметка обновлена")
         else:
             print("Заметка не найдена")
 
